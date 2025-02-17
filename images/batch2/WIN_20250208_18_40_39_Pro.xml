@@ -1,0 +1,26 @@
+<annotation>
+	<folder>batch2</folder>
+	<filename>WIN_20250208_18_40_39_Pro.jpg</filename>
+	<path>C:\Users\owend\images\batch2\WIN_20250208_18_40_39_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>360</height>
+		<depth>1</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pupil</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>286</xmin>
+			<ymin>122</ymin>
+			<xmax>317</xmax>
+			<ymax>152</ymax>
+		</bndbox>
+	</object>
+</annotation>
