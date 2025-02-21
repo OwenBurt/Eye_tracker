@@ -60,3 +60,7 @@ try:
 except:
     print("Error adding negative files")
 
+final_df = pd.concat([annotated_df, negative_df])
+final_df.to_csv('eye_data.csv', index=False)
+
+exit(0)
