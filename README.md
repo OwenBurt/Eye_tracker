@@ -1,3 +1,10 @@
-## This is my first time using git/github!
+# Eye tracker project
 
-to run code use conda environment with opencv installed I am using conda 24.11.3
+Packages for anaconda environment:
+cudatoolkit               11.2.2
+cudnn                     9.7.1.26
+numpy                     1.26.4 
+python                    3.10.13
+pandas                    2.2.3  
+scipy                     1.15.2
+tensorflow                2.18.0
