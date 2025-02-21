@@ -9,11 +9,12 @@ Sources: Chatura Wijetunga: https://medium.com/nerd-for-tech/building-an-object-
 import pandas as pd
 import glob
 import xml.etree.ElementTree as ET
+import os
 
 #This function handles annotated images
-def parse_annotated_files(files, df):
-    for i in range(1, len(files), 2):
-        contents = (ET.parse(files[1])).getroot()
+def parse_anotated_files(files, df):
+    for i in range(len(files)):
+        contents = (ET.parse(files[i])).getroot()
         file_name = contents.find('filename').text 
         obj_class = contents.find('name').text
         x1 = contents.find('xmin').text
@@ -25,8 +26,9 @@ def parse_annotated_files(files, df):
 
 #This function handles negtive images
 def negative_images(files, df):
-    for i in files:
-        file_name = i
+    for i in range(len(files)):
+        file_name = files[i]
+        print(file_name)
         obj_class = "NEGATIVE"
         x1 = 0
         y1 = 0
@@ -34,23 +36,25 @@ def negative_images(files, df):
         y2 = 0
     df = df.append({'file_name':file_name, 'obj_class':obj_class, 'x1':x1, 'y1':y1, 'x2':x2, 'y2':y2})
 
+#Getting current working directory
+cwd = os.getcwd()
 
 #Importing .png and .XML files from annotated_images folder
-annotated_img_files = glob.glob('annotated_images/*')
+anotated_img_files = glob.glob(cwd+"anotated_images/*.xml")
 
 #Parsing out xml and storing it in dataframe
-annotated_img_df = pd.DataFrame()
+anotated_img_df = pd.DataFrame()
 
 #Importing .png files from negative_images folder
-negative_img_files = glob.glob('negative_images/*')
-
+negative_img_files = glob.glob(cwd+"negative_images/*.jpg")
+print(negative_img_files)
 #Adding the negative image data to a dataframe
 negative_img_df = pd.DataFrame()
 
 #calling functions
 try:
-    annotated_df = parse_annotated_files(annotated_img_files, annotated_img_df)
-    print("Annotated images successful")
+    anotated_df = parse_anotated_files(anotated_img_files, anotated_img_df)
+    print("Anotated images successful")
 except:
     print("Error converting annotated images")
 
@@ -60,7 +64,7 @@ try:
 except:
     print("Error adding negative files")
 
-final_df = pd.concat([annotated_df, negative_df])
+final_df = pd.concat([anotated_df, negative_df])
 final_df.to_csv('eye_data.csv', index=False)
 
 exit(0)
