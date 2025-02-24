@@ -8,3 +8,5 @@ python                    3.10.13
 pandas                    2.2.3  
 scipy                     1.15.2
 tensorflow                2.18.0
+
+check it bro
