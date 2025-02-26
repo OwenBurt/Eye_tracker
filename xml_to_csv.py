@@ -1,3 +1,5 @@
+#this file no longer works since image file directory has been changed.
+
 '''
 Author: Owen Burt
 Date created: 2/20/2025
