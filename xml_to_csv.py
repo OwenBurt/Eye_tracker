@@ -1,5 +1,3 @@
-#this file no longer works since image file directory has been changed.
-
 '''
 Author: Owen Burt
 Date created: 2/20/2025
@@ -8,21 +6,16 @@ References: I referenced Chatura Wijetunga's object detection project as en exam
 Sources: Chatura Wijetunga: https://medium.com/nerd-for-tech/building-an-object-detector-in-tensorflow-using-bounding-box-regression-2bc13992973f
 '''
 
-#os.path.splitext returns an array of 2 components the first being the
-#path to file with no extension and the second including the extension.
-
 import pandas as pd
 import glob
 import xml.etree.ElementTree as ET
 import os
 
-#Importing .png and .XML files from image_data directory\
+#Gathering .XML file paths from image_data directory
 cwd = os.getcwd()
-
 files = glob.glob(cwd + '/image_data/*.xml')
 
 list = []
-
 for file_path in files:
 
     contents = (ET.parse(file_path)).getroot()        
@@ -36,6 +29,6 @@ for file_path in files:
     list.append(data)
 
 final_df = pd.DataFrame(list)
-final_df.to_csv('eye_data(1).csv', index=False)
+final_df.to_csv('eye_data.csv', index=False)
 
 exit(0)
