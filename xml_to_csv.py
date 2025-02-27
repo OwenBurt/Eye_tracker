@@ -8,15 +8,32 @@ References: I referenced Chatura Wijetunga's object detection project as en exam
 Sources: Chatura Wijetunga: https://medium.com/nerd-for-tech/building-an-object-detector-in-tensorflow-using-bounding-box-regression-2bc13992973f
 '''
 
+#os.path.splitext returns an array of 2 components the first being the
+#path to file with no extension and the second including the extension.
+
 import pandas as pd
 import glob
 import xml.etree.ElementTree as ET
 import os
 
-#This function handles annotated images
-def parse_anotated_files(files):
-    list = []
-    for file_path in files:
+
+cwd = os.getcwd()
+
+#Importing .png and .XML files from image_data directory
+all_img_files = glob.glob(cwd+"/image_data/*")
+
+files = glob.glob(cwd + '/image_data/*')
+
+no_ext_list = []
+for file in files:
+    no_ext = os.path.splitext(file)
+    no_ext_list.append(no_ext[0])
+
+#This function handles all images negative and annotated.
+
+list = []
+for file_path in no_ext_list:
+    try:
         contents = (ET.parse(file_path)).getroot()        
         file_name = contents.find('filename').text        
         obj_class = contents.find('object/name').text        
@@ -26,7 +43,16 @@ def parse_anotated_files(files):
         y2 = contents.find('object/bndbox/ymax').text
         data = {'file_name':file_name, 'obj_class':obj_class, 'x1':x1, 'y1':y1, 'x2':x2, 'y2':y2}
         list.append(data)
-    return pd.DataFrame(list)
+    except:
+        file_path = os.path.basename(file_path)
+        obj_class = 'NEGATIVE'
+        x1 = 0
+        y1 = 0
+        x2 = 0
+        y2 = 0
+        data = {'file_name':file_name, 'obj_class':obj_class, 'x1':x1, 'y1':y1, 'x2':x2, 'y2':y2}
+        list.append(data)
+list = pd.DataFrame(list)
 
 #This function handles negtive images
 def negative_images(files):
@@ -42,14 +68,7 @@ def negative_images(files):
         list.append(data)
     return pd.DataFrame(list)
 
-#Getting current working directory
-cwd = os.getcwd()
 
-#Importing .png and .XML files from annotated_images folder
-anotated_img_files = glob.glob(cwd+"/anotated_images/*.xml")
-
-#Importing .png files from negative_images folder
-negative_img_files = glob.glob(cwd+"/negative_images/*.jpg")
 
 #calling functions
 try:
@@ -58,13 +77,7 @@ try:
 except:
     print("Error converting annotated images")
 
-try:
-    negative_df = negative_images(negative_img_files)
-    print("Negative images successful")
-except:
-    print("Error adding negative files")
-
-final_df = pd.concat([anotated_df, negative_df])
-final_df.to_csv('eye_data.csv', index=False)
+#final_df = pd.concat([anotated_df, negative_df])
+#final_df.to_csv('eye_data(1).csv', index=False)
 
 exit(0)
