@@ -18,7 +18,7 @@ import os
 
 cwd = os.getcwd()
 
-files = glob.glob(cwd + '/to_be_labeled/*') #directory no longer exists.
+files = glob.glob(cwd + '/to_be_labeled/*') #directory is empty.
 
 for file in files:
     file_name = os.path.basename(file)
