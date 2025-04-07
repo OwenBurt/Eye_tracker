@@ -13,7 +13,7 @@ import os
 
 #Gathering .XML file paths from image_data directory
 cwd = os.getcwd()
-files = glob.glob(cwd + '/image_data/*.xml')
+files = glob.glob(cwd + '/image_data/*.xml') #this directory no longer exists
 
 list = []
 for file_path in files:
