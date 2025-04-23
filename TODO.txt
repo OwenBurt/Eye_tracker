@@ -1,6 +1,6 @@
-re-import data
-re-label data (create .txt files with propper format)
-create yaml file 
-prep directory for training 
-train with yolo detect train data=</path/to/your/data.yaml>
-run this command to check yolo settings (yolo settings)
+[x] re-import data
+[x] re-label data (create .txt files with propper format)
+[] create yaml file 
+[] prep directory for training 
+[] train with yolo detect train data=</path/to/your/data.yaml>
+[] run this command to check yolo settings (yolo settings)

@@ -1,0 +1,6 @@
+train: C:\Users\owend\Projects\Eye_tracker\data\images\train
+val: C:\Users\owend\Projects\Eye_tracker\data\images\val
+
+names:
+    0: negative
+    1: pupil
