@@ -47,3 +47,4 @@ for file in files:
     tree = ET.ElementTree(annotation)
     ET.indent(tree, '   ')
     tree.write(cwd + '/image_data/' + file_name_xml)
+    
