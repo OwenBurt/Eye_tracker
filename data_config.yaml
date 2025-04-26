@@ -1,3 +1,9 @@
+# Author: Owen Burt
+# Date created: 4/20/2025
+# Description: This is a config file for training YOLO v11 on my custom dataset. 
+# Refrences: Esteban Uri "Training YOLOv11 object detector on a custom dataset".
+# Sources: Uri https://medium.com/@estebanuri/training-yolov11-object-detector-on-a-custom-dataset-39bba09530ff.
+
 train: C:\Users\owend\Projects\Eye_tracker\data\images\train
 val: C:\Users\owend\Projects\Eye_tracker\data\images\val
 

@@ -1,6 +1,6 @@
 '''
 Author: Owen Burt
-Date created: 2/20/2025
+Date created: 4/20/2025
 Description: This file extracts data from xml annotation files and creates new .txt files for YOLO v11. 
              These files are stored in data/labels/*. The corresponding image files are then moved from image_data to data/images/*.
 References: I referenced Chatura Wijetunga's object detection project as en example and for inspiration.

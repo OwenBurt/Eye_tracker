@@ -1,14 +1,15 @@
 ''' 
 Author: Owen Burt
-
+Date created: --
 Description: This code preps the data for YOLO model. This file will not work since source directory has been deleted.
+             ### THIS FILE IS NO LONGER NEEDED AND HAS BEEN REPLACED BY annotations.py ###
 Sources: 
 '''
 
-import os
 import pandas as pd
 import numpy as np
 import shutil
+import os
 
 cwd = os.getcwd()
 

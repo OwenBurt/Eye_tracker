@@ -1,15 +1,13 @@
 '''
 Author: Owen Burt
 Date created: 2/27/2025
-Description: 
-    This file adds annotations to negative files in .xml files and stores them in the image_data directory.
-    The structure for these annotation files replicates the structure that labelimg produces. 
-    *** After this code was run I moved the negative images to image_data and deleted      ***
-    *** the seperate directory containing my negative images that was called to_be_labeled ***
-References: 
-Sources: 
-   1. Stack Overflow https://stackoverflow.com/questions/3605680/creating-a-simple-xml-file-using-python
-   2. Python Docs https://docs.python.org/3/library/xml.etree.elementtree.html
+Description: This file adds annotations to negative files in .xml files and stores them in the image_data directory.
+             The structure for these annotation files replicates the structure that labelimg produces. 
+             *** After this code was run I moved the negative images to image_data and deleted      ***
+             *** the seperate directory containing my negative images that was called to_be_labeled ***
+References: --
+Sources: 1. Stack Overflow https://stackoverflow.com/questions/3605680/creating-a-simple-xml-file-using-python
+         2. Python Docs https://docs.python.org/3/library/xml.etree.elementtree.html
 '''
 
 import xml.etree.cElementTree as ET
