@@ -1,0 +1,9 @@
+my_models/
+eye_data.csv
+data/
+image_data/
+my_models.zip
+
+*.xml
+*.jpg
+*.txt
