@@ -30,5 +30,3 @@ for file_path in files:
 
 final_df = pd.DataFrame(list)
 final_df.to_csv('eye_data.csv', index=False)
-
-exit(0)

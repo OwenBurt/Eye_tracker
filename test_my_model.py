@@ -1,10 +1,9 @@
 '''
-
 Author: Owen Burt
 Date created: 4/26/2025
 Description: This file tests the best model trained on my_bad_model. 
-References: ChatGPT, The majority of this code is from ChatGPT
-Sources: I used ChatGPT to give me the OpenCV (cv2) funcions to open video feed and alter it by adding bounding boxes.
+References: ChatGPT, I have very little experience with OpenCV and used ChatGPT to help narrow down the functions and parameters needed. 
+Sources: ChatGPt.
 '''
 
 import tensorflow as tf
@@ -19,7 +18,7 @@ model = tf.keras.models.load_model(model_file)
 
 cap = cv2.VideoCapture(1)
 
-window_name = 'MY_BAD_MODEL :('
+window_name = 'MY_MODEL'
 
 cv2.namedWindow(window_name, cv2.WINDOW_NORMAL)
 cv2.resizeWindow(window_name, 800, 600)
