@@ -13,7 +13,7 @@ import cv2
 import os
 
 cwd = os.getcwd()
-model_file = cwd + '\\my_models\\my_bad_model6.h5'
+model_file = cwd + '\\my_models\\my_model5.h5'
 
 model = tf.keras.models.load_model(model_file)
 
