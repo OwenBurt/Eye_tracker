@@ -6,4 +6,4 @@ To recreate the exact environment for this project make a new anaconda or minico
 
 #### System:  
 
-Windows 11 Pro Version 10.0.26100 
+Windows 11 Pro Version 10.0.26100
