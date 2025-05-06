@@ -16,7 +16,7 @@ model_file = cwd + '\\my_models\\my_model5.h5'
 
 model = tf.keras.models.load_model(model_file)
 
-cap = cv2.VideoCapture(1)
+cap = cv2.VideoCapture(0)
 
 window_name = 'MY_MODEL'
 
